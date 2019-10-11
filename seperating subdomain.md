@@ -1,4 +1,4 @@
- awk '
+awk '
         {
                 gsub( "^.*://", "", $1 );      # ditch the http://  ftp:// etc
                 n = split( $1, a, "." );
@@ -7,7 +7,7 @@
                 else
                         printf( "%s.%s\n",  a[n-1], a[n] );
         }
-' domains.txt | sort -u >>subdomain
+' list-file-name | sort -u >>subdomain
 
 
 
